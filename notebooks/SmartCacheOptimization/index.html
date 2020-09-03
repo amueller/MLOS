@@ -18,7 +18,7 @@ We&rsquo;re using a sequential model-based optimization approach, that consists 
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.307a4c05153b0ca9fe5c4645310f65b99a2daaa68550281056c2c69ef3068861.js" integrity="sha256-MHpMBRU7DKn&#43;XEZFMQ9luZotqqaFUCgQVsLGnvMGiGE="></script>
+<script defer src="/MLOS/en.search.min.2600738d00ed78fcbe8f308f296cc3c7954cce6d7810d2ee98bb11a4140dc9e5.js" integrity="sha256-JgBzjQDtePy&#43;jzCPKWzDx5VMzm14ENLumLsRpBQNyeU="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -250,7 +250,905 @@ data <span style="color:#f92672">=</span> []
     optimizer<span style="color:#f92672">.</span>register(features_df, objectives_df)
     data<span style="color:#f92672">.</span>append((features_df, objectives_df))
     <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;[{i+1}/{num_iterations}]current_config: {current_cache_config}, hit_rate: {hit_rate}, num_requests: {hit_rate_monitor.num_requests}&#34;</span>)
-</code></pre></div><pre><code>09/01/2020 19:47:45 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+</code></pre></div><pre><code>09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 746}
+
+
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 746}
+
+
+09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:14 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 657}
+
+
+[1/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 746}, hit_rate: 5.271481283462582e-10, num_requests: 1934
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 657}
+
+
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3441}
+
+
+[2/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 657}, hit_rate: 0.2822025565829522, num_requests: 17018
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3441}
+
+
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1789}
+
+
+[3/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3441}, hit_rate: 0.9268571428597551, num_requests: 28000
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 1789}
+
+
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2220}
+
+
+[4/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 1789}, hit_rate: 0.5756279070556971, num_requests: 5375
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 2220}
+
+
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:15 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1878}
+
+
+[5/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 2220}, hit_rate: 0.9432120674372446, num_requests: 40584
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1878}
+
+
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2122}
+
+
+[6/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1878}, hit_rate: 0.8582813469687337, num_requests: 30617
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 2122}
+
+
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1461}
+
+
+[7/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 2122}, hit_rate: 0.9445257056193584, num_requests: 36918
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 1461}
+
+
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3869}
+
+
+[8/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 1461}, hit_rate: 0.506038086505797, num_requests: 4306
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3869}
+
+
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 206}
+
+
+[9/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3869}, hit_rate: 0.9418330540503328, num_requests: 35209
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 206}
+
+
+09/01/2020 19:47:16 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2316.0}
+
+
+[10/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 206}, hit_rate: 0.09742317768379337, num_requests: 15351
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 2316.0}
+
+
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3192}
+
+
+[11/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 2316.0}, hit_rate: 0.9460413647754962, num_requests: 37955
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3192}
+
+
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1853.0}
+
+
+[12/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3192}, hit_rate: 0.9546079170186044, num_requests: 45118
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1853.0}
+
+
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 622}
+
+
+[13/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1853.0}, hit_rate: 0.84980116243959, num_requests: 32690
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 622}
+
+
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:17 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3451}
+
+
+[14/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 622}, hit_rate: 0.2603409726620779, num_requests: 15084
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3451}
+
+
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 325}
+
+
+[15/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3451}, hit_rate: 0.95191923934847, num_requests: 42595
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 325}
+
+
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3836.0}
+
+
+[16/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 325}, hit_rate: 0.1391437309466817, num_requests: 15056
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3836.0}
+
+
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1175.0}
+
+
+[17/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3836.0}, hit_rate: 0.9425090531414393, num_requests: 35623
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1175.0}
+
+
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:18 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1783}
+
+
+[18/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1175.0}, hit_rate: 0.525867861163455, num_requests: 22365
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1783}
+
+
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1342.0}
+
+
+[19/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1783}, hit_rate: 0.8153207621224445, num_requests: 30599
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 1342.0}
+
+
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3505}
+
+
+[20/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 1342.0}, hit_rate: 4.916420843207266e-10, num_requests: 2034
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3505}
+
+
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 726.0}
+
+
+[21/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3505}, hit_rate: 0.9405325357896416, num_requests: 34439
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 726.0}
+
+
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:19 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1978.0}
+
+
+[22/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 726.0}, hit_rate: 4.967709883274858e-10, num_requests: 2013
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 1978.0}
+
+
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1647}
+
+
+[23/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 1978.0}, hit_rate: 4.098360654058049e-10, num_requests: 2458
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1647}
+
+
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 788}
+
+
+[24/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1647}, hit_rate: 0.7522519448699245, num_requests: 29308
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 788}
+
+
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 816}
+
+
+[25/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 788}, hit_rate: 0.35268721982882123, num_requests: 18067
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 816}
+
+
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:20 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3397.0}
+
+
+[26/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 816}, hit_rate: 5.249343829265435e-10, num_requests: 1978
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3397.0}
+
+
+09/01/2020 19:47:21 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:21 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:21 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2258.0}
+
+
+[27/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3397.0}, hit_rate: 0.948735919901158, num_requests: 43297
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 2258.0}
+
+
+09/01/2020 19:47:21 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:21 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:21 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 4066.0}
+
+
+[28/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 2258.0}, hit_rate: 0.9436107822367463, num_requests: 36319
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 4066.0}
+
+
+09/01/2020 19:47:21 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:22 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:22 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2907.0}
+
+
+[29/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 4066.0}, hit_rate: 0.952536559365164, num_requests: 43149
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2907.0}
+
+
+09/01/2020 19:47:22 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:22 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:22 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 821.0}
+
+
+[30/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2907.0}, hit_rate: 0.9359299233556725, num_requests: 34513
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 821.0}
+
+
+09/01/2020 19:47:22 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:22 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:22 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1527}
+
+
+[31/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 821.0}, hit_rate: 5.146680388498878e-10, num_requests: 1943
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1527}
+
+
+09/01/2020 19:47:22 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:22 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:22 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2122}
+
+
+[32/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1527}, hit_rate: 0.7032258064621331, num_requests: 28210
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2122}
+
+
+09/01/2020 19:47:23 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:23 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:23 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2865}
+
+
+[33/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2122}, hit_rate: 0.9527108155548002, num_requests: 43309
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 2865}
+
+
+09/01/2020 19:47:23 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:23 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:23 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2721}
+
+
+[34/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 2865}, hit_rate: 0.9214573346147092, num_requests: 29234
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2721}
+
+
+09/01/2020 19:47:23 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+
+
+[35/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2721}, hit_rate: 0.9538676397721794, num_requests: 44394
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 4092.0}
+
+
+09/01/2020 19:47:23 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:23 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 4092.0}
+09/01/2020 19:47:24 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+
+
+[36/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 4092.0}, hit_rate: 0.9397434388625473, num_requests: 35466
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3113.0}
+
+
+09/01/2020 19:47:24 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:24 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3113.0}
+09/01/2020 19:47:24 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:24 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:24 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3359.0}
+
+
+[37/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3113.0}, hit_rate: 0.9513273284703917, num_requests: 42077
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3359.0}
+
+
+09/01/2020 19:47:24 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:24 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:24 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1648}
+
+
+[38/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3359.0}, hit_rate: 0.9438581101471022, num_requests: 36479
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1648}
+
+
+09/01/2020 19:47:25 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:25 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:25 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3319}
+
+
+[39/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1648}, hit_rate: 0.7537264644431967, num_requests: 30592
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3319}
+
+
+09/01/2020 19:47:25 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+
+
+[40/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3319}, hit_rate: 0.9336894932836752, num_requests: 33000
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2377.0}
+
+
+09/01/2020 19:47:25 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:25 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2377.0}
+09/01/2020 19:47:25 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:25 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:25 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1755}
+
+
+[41/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2377.0}, hit_rate: 0.9438965592827115, num_requests: 42480
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1755}
+
+
+09/01/2020 19:47:25 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:26 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:26 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2776.0}
+
+
+[42/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1755}, hit_rate: 0.7990247426476783, num_requests: 27685
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2776.0}
+
+
+09/01/2020 19:47:26 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+
+
+[43/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2776.0}, hit_rate: 0.9524825986089911, num_requests: 43100
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3037.0}
+
+
+09/01/2020 19:47:26 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:26 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3037.0}
+09/01/2020 19:47:26 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:26 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:26 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2985.0}
+
+
+[44/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3037.0}, hit_rate: 0.9434847397774854, num_requests: 36238
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2985.0}
+
+
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1382}
+
+
+[45/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2985.0}, hit_rate: 0.9492730290057891, num_requests: 40373
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1382}
+
+
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2982.0}
+
+
+[46/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1382}, hit_rate: 0.634035903204278, num_requests: 25254
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2982.0}
+
+
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 2599}
+
+
+[47/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2982.0}, hit_rate: 0.9392086437727684, num_requests: 33689
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 2599}
+
+
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:27 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3706}
+
+
+[48/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 2599}, hit_rate: 0.9533644540600396, num_requests: 43915
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3706}
+
+
+09/01/2020 19:47:28 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:28 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:28 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3199.0}
+
+
+[49/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3706}, hit_rate: 0.9467290935115951, num_requests: 38445
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3199.0}
+
+
+09/01/2020 19:47:28 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:28 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:28 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2964.0}
+
+
+[50/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3199.0}, hit_rate: 0.9532686822600509, num_requests: 43825
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2964.0}
+
+
+09/01/2020 19:47:28 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+
+
+[51/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2964.0}, hit_rate: 0.9342388337689291, num_requests: 34614
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2669.0}
+
+
+09/01/2020 19:47:29 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:29 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2669.0}
+09/01/2020 19:47:29 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:29 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:29 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2802.0}
+
+
+[52/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2669.0}, hit_rate: 0.9510563043697768, num_requests: 41844
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2802.0}
+
+
+09/01/2020 19:47:29 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:30 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:30 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2957.0}
+
+
+[53/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2802.0}, hit_rate: 0.9381810498373576, num_requests: 33129
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2957.0}
+
+
+09/01/2020 19:47:30 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:30 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:30 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2748.0}
+
+
+[54/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2957.0}, hit_rate: 0.952645209028102, num_requests: 43248
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2748.0}
+
+
+09/01/2020 19:47:30 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:30 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:30 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2590.0}
+
+
+[55/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2748.0}, hit_rate: 0.9317651762533563, num_requests: 35579
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2590.0}
+
+
+09/01/2020 19:47:31 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:31 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:31 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3076.0}
+
+
+[56/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2590.0}, hit_rate: 0.9517947510897542, num_requests: 42485
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3076.0}
+
+
+09/01/2020 19:47:31 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:31 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:31 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3007.0}
+
+
+[57/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3076.0}, hit_rate: 0.9397221568183506, num_requests: 36241
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3007.0}
+
+
+09/01/2020 19:47:31 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+
+
+[58/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3007.0}, hit_rate: 0.9509261256092079, num_requests: 41733
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2710.0}
+
+
+09/01/2020 19:47:32 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:32 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2710.0}
+09/01/2020 19:47:32 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:32 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:32 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3530}
+
+
+[59/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2710.0}, hit_rate: 0.9380876084543641, num_requests: 36556
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3530}
+
+
+09/01/2020 19:47:32 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:32 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:32 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2758.0}
+
+
+[60/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3530}, hit_rate: 0.9540930691304113, num_requests: 44612
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2758.0}
+
+
+09/01/2020 19:47:32 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:33 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:33 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2797.0}
+
+
+[61/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2758.0}, hit_rate: 0.9454753600823866, num_requests: 37561
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2797.0}
+
+
+09/01/2020 19:47:33 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:33 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:33 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1118}
+
+
+[62/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2797.0}, hit_rate: 0.9522755342215116, num_requests: 42913
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1118}
+
+
+09/01/2020 19:47:33 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:33 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:33 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2723.0}
+
+
+[63/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1118}, hit_rate: 0.4987052415618044, num_requests: 22398
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2723.0}
+
+
+09/01/2020 19:47:33 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:34 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:34 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3111.0}
+
+
+[64/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2723.0}, hit_rate: 0.9406032482615835, num_requests: 34480
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3111.0}
+
+
+09/01/2020 19:47:34 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:34 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:34 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 605}
+09/01/2020 19:47:34 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+
+
+[65/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3111.0}, hit_rate: 0.9518819604353207, num_requests: 42563
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 605}
+
+
+09/01/2020 19:47:34 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:34 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2357}
+
+
+[66/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 605}, hit_rate: 4.5787545766580794e-10, num_requests: 2184
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2357}
+
+
+09/01/2020 19:47:34 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:34 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:34 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 337}
+
+
+[67/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2357}, hit_rate: 0.9332290036537157, num_requests: 35991
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 337}
+
+
+09/01/2020 19:47:35 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:35 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:35 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 141.0}
+
+
+[68/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 337}, hit_rate: 3.5536602688153305e-10, num_requests: 2924
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 141.0}
+
+
+09/01/2020 19:47:35 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:35 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:35 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1350.0}
+
+
+[69/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 141.0}, hit_rate: 2.0533880899274355e-10, num_requests: 4870
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 1350.0}
+
+
+09/01/2020 19:47:35 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:35 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:35 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1013.0}
+
+
+[70/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 1350.0}, hit_rate: 4.916420843207266e-10, num_requests: 2034
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 1013.0}
+
+
+09/01/2020 19:47:36 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:36 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:36 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1655}
+
+
+[71/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 1013.0}, hit_rate: 5.151983510998463e-10, num_requests: 1941
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 1655}
+
+
+09/01/2020 19:47:36 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:36 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:36 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 1231.0}
+
+
+[72/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 1655}, hit_rate: 4.5372050796110687e-10, num_requests: 2222
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 1231.0}
+
+
+09/01/2020 19:47:36 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:36 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:36 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 300.0}
+
+
+[73/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 1231.0}, hit_rate: 5.05050504795429e-10, num_requests: 2033
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 300.0}
+
+
+09/01/2020 19:47:37 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:37 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:37 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3492}
+
+
+[74/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 300.0}, hit_rate: 3.2981530332130103e-10, num_requests: 3082
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3492}
+
+
+09/01/2020 19:47:37 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:37 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:37 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 835.0}
+
+
+[75/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3492}, hit_rate: 0.9420765336441984, num_requests: 35357
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 835.0}
+
+
+09/01/2020 19:47:37 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:38 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:38 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3199.0}
+
+
+[76/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 835.0}, hit_rate: 5.055611726463289e-10, num_requests: 1978
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3199.0}
+
+
+09/01/2020 19:47:38 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:38 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:38 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3188.0}
+
+
+[77/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3199.0}, hit_rate: 0.942504211118964, num_requests: 39520
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3188.0}
+
+
+09/01/2020 19:47:38 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:38 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:38 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3335}
+
+
+[78/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3188.0}, hit_rate: 0.9415775210400349, num_requests: 35055
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3335}
+
+
+09/01/2020 19:47:38 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:39 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:39 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3215.0}
+
+
+[79/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3335}, hit_rate: 0.9506315687987987, num_requests: 41484
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3215.0}
+
+
+09/01/2020 19:47:39 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:39 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:39 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3203.0}
+
+
+[80/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3215.0}, hit_rate: 0.9429001589220481, num_requests: 35867
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3203.0}
+
+
+09/01/2020 19:47:39 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:39 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:39 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1799}
+
+
+[81/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3203.0}, hit_rate: 0.9504212259138564, num_requests: 41308
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1799}
+
+
+09/01/2020 19:47:39 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:40 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:40 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3179.0}
+
+
+[82/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1799}, hit_rate: 0.8365851396111257, num_requests: 32341
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3179.0}
+
+
+09/01/2020 19:47:40 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:40 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:40 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1225}
+
+
+[83/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3179.0}, hit_rate: 0.9529065489341219, num_requests: 43488
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1225}
+
+
+09/01/2020 19:47:40 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:40 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:40 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3803}
+
+
+[84/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1225}, hit_rate: 0.5641036515728358, num_requests: 23579
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3803}
+
+
+09/01/2020 19:47:40 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:40 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:40 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3179.0}
+
+
+[85/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3803}, hit_rate: 0.9386569220649776, num_requests: 35940
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3179.0}
+
+
+09/01/2020 19:47:41 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:41 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:41 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 302}
+
+
+[86/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3179.0}, hit_rate: 0.9511438727080526, num_requests: 41919
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 302}
+
+
+09/01/2020 19:47:41 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:41 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:41 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 28}
+
+
+[87/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 302}, hit_rate: 0.14218233354867518, num_requests: 14819
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 28}
+
+
+09/01/2020 19:47:41 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:41 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:41 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3207.0}
+
+
+[88/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 28}, hit_rate: 0.011973392534222218, num_requests: 13530
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3207.0}
+
+
+09/01/2020 19:47:41 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:42 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:42 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 910}
+
+
+[89/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3207.0}, hit_rate: 0.9524119341957336, num_requests: 43036
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 910}
+
+
+09/01/2020 19:47:42 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:42 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:42 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2638}
+
+
+[90/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 910}, hit_rate: 5.058168940284183e-10, num_requests: 1977
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2638}
+
+
+09/01/2020 19:47:42 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:42 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+
+
+[91/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2638}, hit_rate: 0.9444790847739182, num_requests: 36887
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3173.0}
+
+
+09/01/2020 19:47:42 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3173.0}
+09/01/2020 19:47:42 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:43 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:43 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3197.0}
+
+
+[92/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3173.0}, hit_rate: 0.951562167404944, num_requests: 42281
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3197.0}
+
+
+09/01/2020 19:47:43 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:43 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:43 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3205.0}
+
+
+[93/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3197.0}, hit_rate: 0.9347355003207541, num_requests: 35569
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3205.0}
+
+
+09/01/2020 19:47:43 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:43 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:43 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 3127}
+
+
+[94/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3205.0}, hit_rate: 0.9490052538545105, num_requests: 40161
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 3127}
+
+
+09/01/2020 19:47:43 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3203.0}
+
+
+[95/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 3127}, hit_rate: 0.9351570415420732, num_requests: 31584
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3203.0}
+
+
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 2318}
+
+
+[96/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3203.0}, hit_rate: 0.9497176528369822, num_requests: 40730
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 2318}
+
+
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 1090}
+
+
+[97/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 2318}, hit_rate: 0.9412422894866951, num_requests: 35515
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 1090}
+
+
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;MRU&quot;, &quot;mru_cache_config.cache_size&quot;: 932}
+
+
+[98/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 1090}, hit_rate: 0.48815120409248053, num_requests: 20846
+{'implementation': 'MRU', 'mru_cache_config.cache_size': 932}
+
+
+09/01/2020 19:47:44 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
+09/01/2020 19:47:45 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py:  65 -                       run() ] Started the SmartCacheWorkloadGenerator. Duration=0.2
+09/01/2020 19:47:45 -     Optimizing Smart Cache -    INFO - [       SmartCache.py: 130 -               reconfigure() ] Reconfiguring. New config values: {&quot;implementation&quot;: &quot;LRU&quot;, &quot;lru_cache_config.cache_size&quot;: 3181.0}
+
+
+[99/100]current_config: {'implementation': 'MRU', 'mru_cache_config.cache_size': 932}, hit_rate: 0.41828075082776156, num_requests: 20126
+{'implementation': 'LRU', 'lru_cache_config.cache_size': 3181.0}
+
+
+09/01/2020 19:47:45 -     Optimizing Smart Cache -    INFO - [SmartCacheWorkloadGenerator.py: 108 -                       run() ] Exiting the SmartCacheWorkloadGenerator.
 
 
 [100/100]current_config: {'implementation': 'LRU', 'lru_cache_config.cache_size': 3181.0}, hit_rate: 0.9479436734292119, num_requests: 40485
