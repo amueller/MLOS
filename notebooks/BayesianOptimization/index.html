@@ -16,7 +16,7 @@ Motivation In software performance engineering, the impact different (input) par
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.2600738d00ed78fcbe8f308f296cc3c7954cce6d7810d2ee98bb11a4140dc9e5.js" integrity="sha256-JgBzjQDtePy&#43;jzCPKWzDx5VMzm14ENLumLsRpBQNyeU="></script>
+<script defer src="/MLOS/en.search.min.36d5b936034791ee6628efd13f6b6b585de5fa66ab01ed96eea126d157262596.js" integrity="sha256-NtW5NgNHke5mKO/RP2trWF3l&#43;marAe2W7qEm0VcmJZY="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -58,9 +58,9 @@ https://github.com/alex-shpak/hugo-book
 <li>
 <p><a href="/MLOS/documentation/">Documentation</a></p>
 <ul>
-<li><a href="/MLOS/documentation/01-Prerequisites/">Prerequisits</a></li>
+<li><a href="/MLOS/documentation/01-Prerequisites/">Prerequisites</a></li>
 <li><a href="/MLOS/documentation/02-Build/">Build</a></li>
-<li><a href="/MLOS/documentation/05-Test/">Test</a></li>
+<li><a href="/MLOS/documentation/04-Test/">Test</a></li>
 <li><a href="/MLOS/documentation/CodingStandard/">Coding Standard</a></li>
 <li><a href="/MLOS/documentation/MlosArchitecture/">Architecture</a></li>
 <li><a href="/MLOS/documentation/RepoOrganization/">Repo Organization</a></li>
@@ -69,10 +69,8 @@ https://github.com/alex-shpak/hugo-book
 <li>
 <p>Notebooks</p>
 <ul>
-<li><a href="/MLOS/notebooks/StartHere/">Start Here</a></li>
-<li><a href="/MLOS/notebooks/SmartCacheOptimization/">Smart Cache Optimization</a></li>
-<li><a href="/MLOS/notebooks/OptimizerMonitor/">Optimizer Monitor</a></li>
 <li><a href="/MLOS/notebooks/BayesianOptimization/"class=active>Bayesian Optimization</a></li>
+<li><a href="/MLOS/notebooks/SmartCacheOptimization/">Smart Cache Optimization</a></li>
 </ul>
 </li>
 <li>
@@ -157,7 +155,7 @@ Bayesian optimization is one technique for efficiently selecting the samples in 
 In this example we use a synthetic (i.e. made-up) function that we can look at directly to stand in for a complex system with unknown characteristics.</p>
 <p>Bayesian Optimization is a <a href="https://en.wikipedia.org/wiki/Global_optimization">global optimization</a> strategy, so a way to find the global optimum of a mathematical function that&rsquo;s not necessarily <a href="https://en.wikipedia.org/wiki/Convex_function">convex</a>. BO is a black-box optimization technique, meaning that it requires only function values and no other information like gradients.</p>
 <p>This is in contrast to other optimization strategies, such as gradient descent or conjugate gradient that require gradients and are only guaranteed to find a local optimum (if the function is assumed to be convex, this is also the global optimum).</p>
-<p>Finding the global optimum of a general non-convext function is NP-hard, which makes it impossible to provide effective convergence guarantees for any global optimization strategy, including Bayesian Optimization. However, BO has been found to be quite effective in the past.</p>
+<p>Finding the global optimum of a general non-convex function is NP-hard, which makes it impossible to provide effective convergence guarantees for any global optimization strategy, including Bayesian Optimization. However, BO has been found to be quite effective in the past.</p>
 <h2 id="a-synthetic-example">A synthetic example</h2>
 <p>Let&rsquo;s take a simple synthetic example of a one-dimensional function that we assume is unknown.
 If we actually had access to the function, we could use more efficient techniques using calculus and would not be using Bayesian Optimization.</p>
@@ -203,7 +201,7 @@ optimization_problem <span style="color:#f92672">=</span> OptimizationProblem(
 <li>Pick the next data point to evaluate based on the updated model g_i using a criterion known as <strong>acquisition function</strong>.</li>
 </ul>
 <p>The idea is that eventually the surrogate model will provide a good approximation of the objective function, but it will be much faster to evaluate (i.e. by predicting with a Random Forest or Gaussian process or another trained machine learning model, instead of running a complex deployment). The acquisition function serves as a means to trade off exploration vs exploitation in collecting new data for building the surrogate model: it picks points that have a low (close to optimum) value of the surrogate model (and so are expected to have a low value of the actual objective). This is the &ldquo;exploitation&rdquo; of existing knowledge in the model. On the other hand, it also encourages exploring new areas in which there is a lot of uncertainty in the surrogate model, i.e. where we expect the surrogate model not to be very acurate yet.</p>
-<p>This process is coordinated by the <code>BayesianOptimizer</code> object, which we will use to performe Bayesian Optimization with a random forest surrogate model. Details of this particular method can be found in <a href="https://www.cs.ubc.ca/~hutter/papers/11-LION5-SMAC.pdf">Hutter et. al. (2011)</a>. We&rsquo;re first configuring the model to refit after every iteration and use 10 trees for the random forest:</p>
+<p>This process is coordinated by the <code>BayesianOptimizer</code> object, which we will use to perform Bayesian Optimization with a random forest surrogate model. Details of this particular method can be found in <a href="https://www.cs.ubc.ca/~hutter/papers/11-LION5-SMAC.pdf">Hutter et. al. (2011)</a>. We&rsquo;re first configuring the model to refit after every iteration and use 10 trees for the random forest:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> mlos.Optimizers.BayesianOptimizer <span style="color:#f92672">import</span> BayesianOptimizer, BayesianOptimizerConfig
 <span style="color:#f92672">from</span> mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel <span style="color:#f92672">import</span> HomogeneousRandomForestRegressionModelConfig
 

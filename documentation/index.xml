@@ -16,7 +16,7 @@
       
       <guid>https://microsoft.github.io/MLOS/documentation/01-Prerequisites/</guid>
       <description>Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build/
-Contents  Prerequisites for building and using MLOS  Contents Requirements Clone the repository Install build tools  Docker Linux build tools Windows build tools  Using a local script Using Chocolatey Manually     Install Python Dependencies  Linux Windows   Install Docker  Linux Docker Install Windows Docker Install       Note: Most Windows shell commands here expect powershell (or pwsh).</description>
+Contents  Prerequisites for building and using MLOS  Contents Linux  Linux Requirements Clone the repository Linux Docker Install Install Linux Build Tools  Docker Build Image Manual Build Tools Install   Linux Python Install  Docker Python Install Using Conda Manual Python Install     Windows  Windows Requirements Clone the repository Windows build tools  Using a local script Build Tools Using Chocolatey Windows Build Manually   Windows Python Install  Conda Based Install for Windows Python Using Chocolatey   Windows Docker Install      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.</description>
     </item>
     
     <item>
@@ -26,8 +26,8 @@ Contents  Prerequisites for building and using MLOS  Contents Requirements Clone
       
       <guid>https://microsoft.github.io/MLOS/documentation/02-Build/</guid>
       <description>Build Instructions for MLOS Prerequisites See 01-Prerequisites/ for initial build tools setup instructions.
-Contents  Build Instructions for MLOS  Prerequisites Contents Docker Linux  CLI VSCode   Windows  CLI Visual Studio      Docker Assuming you&amp;rsquo;ve built a container image using the instructions in 01-Prerequisites/ you can start an interactive session using the container image as follows:
-# Using the UbuntuVersion local shell variable set earlier to &amp;#34;docker build&amp;#34; the image:UbuntuVersion=20.</description>
+There are different instructions according to the environment setup you chose.
+Contents  Build Instructions for MLOS  Prerequisites Contents Docker Linux  CLI VSCode   Windows  CLI Visual Studio      Docker If you chose to use the Docker build environment and have already built or pulled a container image using the instructions in 01-Prerequisites/ you can start an interactive session using the container image as follows:</description>
     </item>
     
     <item>
@@ -41,19 +41,10 @@ Contents  Build Instructions for MLOS  Prerequisites Contents Docker Linux  CLI 
     
     <item>
       <title></title>
-      <link>https://microsoft.github.io/MLOS/documentation/04-Contributing/</link>
+      <link>https://microsoft.github.io/MLOS/documentation/04-Test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://microsoft.github.io/MLOS/documentation/04-Contributing/</guid>
-      <description>Contributing to MLOS TODO: Write up some instructions for contributing to MLOS codebase itself.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://microsoft.github.io/MLOS/documentation/05-Test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://microsoft.github.io/MLOS/documentation/05-Test/</guid>
+      <guid>https://microsoft.github.io/MLOS/documentation/04-Test/</guid>
       <description>Test Instructions for MLOS TODO: document how to run unit tests for
  C++ C#  Python First, ensure that the necessary Python modules are installed. See 01-Prerequisites/ for details.
 Linux scripts/run-python-tests.sh Windows scripts\run-python-tests.cmd </description>
@@ -61,10 +52,10 @@ Linux scripts/run-python-tests.sh Windows scripts\run-python-tests.cmd </descrip
     
     <item>
       <title></title>
-      <link>https://microsoft.github.io/MLOS/documentation/06-Debug/</link>
+      <link>https://microsoft.github.io/MLOS/documentation/05-Debug/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://microsoft.github.io/MLOS/documentation/06-Debug/</guid>
+      <guid>https://microsoft.github.io/MLOS/documentation/05-Debug/</guid>
       <description>TODO</description>
     </item>
     

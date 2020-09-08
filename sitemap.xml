@@ -33,17 +33,12 @@
   </url>
   
   <url>
-    <loc>https://microsoft.github.io/MLOS/documentation/04-Contributing/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/04-Test/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://microsoft.github.io/MLOS/documentation/05-Test/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://microsoft.github.io/MLOS/documentation/06-Debug/</loc>
+    <loc>https://microsoft.github.io/MLOS/documentation/05-Debug/</loc>
     <priority>0</priority>
   </url>
   
@@ -77,19 +72,11 @@
   </url>
   
   <url>
-    <loc>https://microsoft.github.io/MLOS/notebooks/OptimizerMonitor/</loc>
-  </url>
-  
-  <url>
-    <loc>https://microsoft.github.io/MLOS/notebooks/SmartCache/</loc>
+    <loc>https://microsoft.github.io/MLOS/notebooks/SmartCacheCppDocker/</loc>
   </url>
   
   <url>
     <loc>https://microsoft.github.io/MLOS/notebooks/SmartCacheOptimization/</loc>
-  </url>
-  
-  <url>
-    <loc>https://microsoft.github.io/MLOS/notebooks/StartHere/</loc>
   </url>
   
   <url>

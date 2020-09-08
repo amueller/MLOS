@@ -21,25 +21,12 @@ Motivation In software performance engineering, the impact different (input) par
     
     <item>
       <title></title>
-      <link>https://microsoft.github.io/MLOS/notebooks/OptimizerMonitor/</link>
+      <link>https://microsoft.github.io/MLOS/notebooks/SmartCacheCppDocker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://microsoft.github.io/MLOS/notebooks/OptimizerMonitor/</guid>
-      <description>Download OptimizerMonitor.ipynb notebook Goal The goal of this notebook is to provide a UI to a data scientist or dev 2.0 to interact with the optimizers residing in the optimizer microservice.
-TODO   Integrate Model Tomograph:
- Change Predict() to return a pandas df: change change/eliminate the prediction class.   Fix the individual models input spaces so that they reject invalid points. Add color scale Add cross-hairs    Display current optimum:</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://microsoft.github.io/MLOS/notebooks/SmartCache/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://microsoft.github.io/MLOS/notebooks/SmartCache/</guid>
-      <description>Download SmartCache.ipynb notebook Goal The goal of this notebook is to optimize SmartCache.
-from IPython.core.display import display, HTML display(HTML(&amp;#34;&amp;lt;style&amp;gt;.container { width:100% !important; }&amp;lt;/style&amp;gt;&amp;#34;)) TODO Lots to do here.
-For once - this is probably not the workflow we want. We likely want to:
- Start the Optimizer in a separate process so that we can monitor its progress. Maybe we should have a separate notebook just for Optimizer Monitoring. Start the Mlos.</description>
+      <guid>https://microsoft.github.io/MLOS/notebooks/SmartCacheCppDocker/</guid>
+      <description>Download SmartCacheCppDocker.ipynb notebook Objective The goal of this notebook is to guide you through the process of executing an optimization process in Mlos.
+Steps  Select build configuration. Generate the secrets file. Build the docker image. Launch the docker container. Launch Mlos.Agent. Launch SmartCache.exe benchmark.  Prerequisites  Build the Mlos project. The build configuration (Debug vs. Retail) must match your choice below. Have Docker installed and available. This notebook is run with {MLOS_ROOT}\source\Mlos.</description>
     </item>
     
     <item>
@@ -51,16 +38,6 @@ For once - this is probably not the workflow we want. We likely want to:
       <description>Download SmartCacheOptimization.ipynb notebook Optimizing Smart Cache with Bayesian Optimization The goal of this notebook is to optimize SmartCache using Bayesian Optimization approach.
 We&amp;rsquo;re using a sequential model-based optimization approach, that consists of the following loop:
  Get suggested config from optimizer, Apply suggested config to SmartCache, Execute a fixed workload, Collect the metrics from SmartCache, Register an observation with the optimizer.  # import the required classes and tools import grpc import pandas as pd from mlos.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://microsoft.github.io/MLOS/notebooks/StartHere/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://microsoft.github.io/MLOS/notebooks/StartHere/</guid>
-      <description>Download StartHere.ipynb notebook Objective The goal of this notebook is to guide you through the process of executing an optimization process in Mlos.
-Steps  Select build configuration. Generate the secrets file. Build the docker image. Launch the docker container. Launch Mlos.Agent. Launch SmartCache.exe benchmark.  Prerequisites  Build the Mlos project. The build configuration (Debug vs. Retail) must match your choice below. Have Docker installed and available. This notebook is run with {MLOS_ROOT}\source\Mlos.</description>
     </item>
     
   </channel>

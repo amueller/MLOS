@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build/
-Contents  Prerequisites for building and using MLOS  Contents Requirements Clone the repository Install build tools  Docker Linux build tools Windows build tools  Using a local script Using Chocolatey Manually     Install Python Dependencies  Linux Windows   Install Docker  Linux Docker Install Windows Docker Install       Note: Most Windows shell commands here expect powershell (or pwsh).">
+Contents  Prerequisites for building and using MLOS  Contents Linux  Linux Requirements Clone the repository Linux Docker Install Install Linux Build Tools  Docker Build Image Manual Build Tools Install   Linux Python Install  Docker Python Install Using Conda Manual Python Install     Windows  Windows Requirements Clone the repository Windows build tools  Using a local script Build Tools Using Chocolatey Windows Build Manually   Windows Python Install  Conda Based Install for Windows Python Using Chocolatey   Windows Docker Install      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build/
-Contents  Prerequisites for building and using MLOS  Contents Requirements Clone the repository Install build tools  Docker Linux build tools Windows build tools  Using a local script Using Chocolatey Manually     Install Python Dependencies  Linux Windows   Install Docker  Linux Docker Install Windows Docker Install       Note: Most Windows shell commands here expect powershell (or pwsh)." />
+Contents  Prerequisites for building and using MLOS  Contents Linux  Linux Requirements Clone the repository Linux Docker Install Install Linux Build Tools  Docker Build Image Manual Build Tools Install   Linux Python Install  Docker Python Install Using Conda Manual Python Install     Windows  Windows Requirements Clone the repository Windows build tools  Using a local script Build Tools Using Chocolatey Windows Build Manually   Windows Python Install  Conda Based Install for Windows Python Using Chocolatey   Windows Docker Install      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://microsoft.github.io/MLOS/documentation/01-Prerequisites/" />
 
@@ -16,7 +16,7 @@ Contents  Prerequisites for building and using MLOS  Contents Requirements Clone
 <link rel="manifest" href="/MLOS/manifest.json">
 <link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
-<script defer src="/MLOS/en.search.min.2600738d00ed78fcbe8f308f296cc3c7954cce6d7810d2ee98bb11a4140dc9e5.js" integrity="sha256-JgBzjQDtePy&#43;jzCPKWzDx5VMzm14ENLumLsRpBQNyeU="></script>
+<script defer src="/MLOS/en.search.min.36d5b936034791ee6628efd13f6b6b585de5fa66ab01ed96eea126d157262596.js" integrity="sha256-NtW5NgNHke5mKO/RP2trWF3l&#43;marAe2W7qEm0VcmJZY="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -58,9 +58,9 @@ https://github.com/alex-shpak/hugo-book
 <li>
 <p><a href="/MLOS/documentation/">Documentation</a></p>
 <ul>
-<li><a href="/MLOS/documentation/01-Prerequisites/"class=active>Prerequisits</a></li>
+<li><a href="/MLOS/documentation/01-Prerequisites/"class=active>Prerequisites</a></li>
 <li><a href="/MLOS/documentation/02-Build/">Build</a></li>
-<li><a href="/MLOS/documentation/05-Test/">Test</a></li>
+<li><a href="/MLOS/documentation/04-Test/">Test</a></li>
 <li><a href="/MLOS/documentation/CodingStandard/">Coding Standard</a></li>
 <li><a href="/MLOS/documentation/MlosArchitecture/">Architecture</a></li>
 <li><a href="/MLOS/documentation/RepoOrganization/">Repo Organization</a></li>
@@ -69,10 +69,8 @@ https://github.com/alex-shpak/hugo-book
 <li>
 <p>Notebooks</p>
 <ul>
-<li><a href="/MLOS/notebooks/StartHere/">Start Here</a></li>
-<li><a href="/MLOS/notebooks/SmartCacheOptimization/">Smart Cache Optimization</a></li>
-<li><a href="/MLOS/notebooks/OptimizerMonitor/">Optimizer Monitor</a></li>
 <li><a href="/MLOS/notebooks/BayesianOptimization/">Bayesian Optimization</a></li>
+<li><a href="/MLOS/notebooks/SmartCacheOptimization/">Smart Cache Optimization</a></li>
 </ul>
 </li>
 <li>
@@ -133,24 +131,21 @@ https://github.com/alex-shpak/hugo-book
   <nav id="TableOfContents">
   <ul>
     <li><a href="#contents">Contents</a></li>
-    <li><a href="#requirements">Requirements</a></li>
-    <li><a href="#clone-the-repository">Clone the repository</a></li>
-    <li><a href="#install-build-tools">Install build tools</a>
+    <li><a href="#linux">Linux</a>
       <ul>
-        <li><a href="#docker">Docker</a></li>
-        <li><a href="#linux-build-tools">Linux build tools</a></li>
-        <li><a href="#windows-build-tools">Windows build tools</a></li>
-      </ul>
-    </li>
-    <li><a href="#install-python-dependencies">Install Python Dependencies</a>
-      <ul>
-        <li><a href="#linux-python-install">Linux Python Install</a></li>
-        <li><a href="#windows-python-install">Windows Python Install</a></li>
-      </ul>
-    </li>
-    <li><a href="#install-docker">Install Docker</a>
-      <ul>
+        <li><a href="#linux-requirements">Linux Requirements</a></li>
+        <li><a href="#clone-the-repository">Clone the repository</a></li>
         <li><a href="#linux-docker-install">Linux Docker Install</a></li>
+        <li><a href="#install-linux-build-tools">Install Linux Build Tools</a></li>
+        <li><a href="#linux-python-install">Linux Python Install</a></li>
+      </ul>
+    </li>
+    <li><a href="#windows">Windows</a>
+      <ul>
+        <li><a href="#windows-requirements">Windows Requirements</a></li>
+        <li><a href="#clone-the-repository-1">Clone the repository</a></li>
+        <li><a href="#windows-build-tools">Windows build tools</a></li>
+        <li><a href="#windows-python-install">Windows Python Install</a></li>
         <li><a href="#windows-docker-install">Windows Docker Install</a></li>
       </ul>
     </li>
@@ -172,76 +167,107 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="#prerequisites-for-building-and-using-mlos">Prerequisites for building and using MLOS</a>
 <ul>
 <li><a href="#contents">Contents</a></li>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#clone-the-repository">Clone the repository</a></li>
-<li><a href="#install-build-tools">Install build tools</a>
+<li><a href="#linux">Linux</a>
 <ul>
-<li><a href="#docker">Docker</a></li>
-<li><a href="#linux-build-tools">Linux build tools</a></li>
+<li><a href="#linux-requirements">Linux Requirements</a></li>
+<li><a href="#clone-the-repository">Clone the repository</a></li>
+<li><a href="#linux-docker-install">Linux Docker Install</a></li>
+<li><a href="#install-linux-build-tools">Install Linux Build Tools</a>
+<ul>
+<li><a href="#docker-build-image">Docker Build Image</a></li>
+<li><a href="#manual-build-tools-install">Manual Build Tools Install</a></li>
+</ul>
+</li>
+<li><a href="#linux-python-install">Linux Python Install</a>
+<ul>
+<li><a href="#docker-python-install">Docker Python Install</a></li>
+<li><a href="#using-conda">Using Conda</a></li>
+<li><a href="#manual-python-install">Manual Python Install</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#windows">Windows</a>
+<ul>
+<li><a href="#windows-requirements">Windows Requirements</a></li>
+<li><a href="#clone-the-repository-1">Clone the repository</a></li>
 <li><a href="#windows-build-tools">Windows build tools</a>
 <ul>
 <li><a href="#using-a-local-script">Using a local script</a></li>
-<li><a href="#using-chocolatey">Using Chocolatey</a></li>
-<li><a href="#manually">Manually</a></li>
+<li><a href="#build-tools-using-chocolatey">Build Tools Using Chocolatey</a></li>
+<li><a href="#windows-build-manually">Windows Build Manually</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#install-python-dependencies">Install Python Dependencies</a>
+<li><a href="#windows-python-install">Windows Python Install</a>
 <ul>
-<li><a href="#linux-python-install">Linux</a></li>
-<li><a href="#windows-python-install">Windows</a></li>
+<li><a href="#conda-based-install-for-windows">Conda Based Install for Windows</a></li>
+<li><a href="#python-using-chocolatey">Python Using Chocolatey</a></li>
 </ul>
 </li>
-<li><a href="#install-docker">Install Docker</a>
-<ul>
-<li><a href="#linux-docker-install">Linux Docker Install</a></li>
 <li><a href="#windows-docker-install">Windows Docker Install</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<p>Note: Most Windows shell commands here expect <code>powershell</code> (or <a href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows"><code>pwsh</code></a>).</p>
-</blockquote>
-<h2 id="requirements">Requirements</h2>
-<p>MLOS currently only supports 64-bit Intel/AMD platforms, though ARM64 support is under development.</p>
-<p>It supports Windows and Linux environments.</p>
-<ul>
-<li>
-<p>Windows</p>
-<blockquote>
-<p>Portions of MLOS use Docker, which requires a Linux VM.  So support for <em>one</em> of the following is required:</p>
-</blockquote>
-<ul>
-<li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2">WSL2</a> (e.g. Windows 10 build &gt;= 2004, including Pro, Enterprise, <em>and</em> Home), <em>or</em></li>
-<li><a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/">Hyper-V support</a> (only Windows 10 Pro/Enterprise, <em>not</em> <del>Home</del>)</li>
-</ul>
-<blockquote>
-<p>Note: WSL2 is advised for ease of setup, integrations with Docker, and more flexible resource utilizations benefits.</p>
-</blockquote>
-<p>See the <a href="#install-docker">Install Docker</a> section for more details.</p>
-</li>
-<li>
-<p>Linux</p>
+<p>MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.
+It supports Windows and Linux environments. Below we provide instructions for each OS.</p>
+<h2 id="linux">Linux</h2>
+<h3 id="linux-requirements">Linux Requirements</h3>
 <ul>
 <li>Ubuntu 16.04 (xenial), 18.04 (bionic), 20.04 (focal)</li>
 </ul>
 <blockquote>
 <p>Other distros/versions may work, but are untested.</p>
 </blockquote>
-</li>
-</ul>
-<h2 id="clone-the-repository">Clone the repository</h2>
-<p>Cross platform</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/microsoft/MLOS.git
-</code></pre></div><blockquote>
-<p>See <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing">https://git-scm.com/book/en/v2/Getting-Started-Installing</a> for help installing <code>git</code>.</p>
+<h3 id="clone-the-repository">Clone the repository</h3>
+<p>Make sure you have <code>git</code> available:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt-get -y install git
+</code></pre></div><p>Clone the repository:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/microsoft/MLOS.git
+</code></pre></div><h3 id="linux-docker-install">Linux Docker Install</h3>
+<p>Docker is used for certain portions of the end-to-end examples and as a convient way to setup the build/dev/test environments.</p>
+<blockquote>
+<p>If you are starting with the Python only setup, you can skip this step for now if you wish.</p>
 </blockquote>
-<h2 id="install-build-tools">Install build tools</h2>
-<h3 id="docker">Docker</h3>
-<p>To automatically setup a Linux build environment using <code>docker</code>, run the following:</p>
+<p>Please see the official Docker install documenation for distribution specific documentation:</p>
+<ul>
+<li>
+<p>Ubuntu: <a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></p>
+<p>As a short guide (copied from the link above):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-get remove <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  docker docker-engine docker.io containerd runc
+
+sudo apt-get update
+
+sudo apt-get install <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  | sudo apt-key add -
+
+sudo add-apt-repository <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span style="color:#66d9ef">$(</span>lsb_release -cs<span style="color:#66d9ef">)</span><span style="color:#e6db74"> stable&#34;</span>
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+apt-get install docker-ce
+</code></pre></div></li>
+</ul>
+<h3 id="install-linux-build-tools">Install Linux Build Tools</h3>
+<p>MLOS uses and supports several different languages, so needs their respective build tools installed.</p>
+<blockquote>
+<p>To focus only on Python to start, skip ahead to the <a href="#linux-python-install">Python Install</a> instructions.</p>
+</blockquote>
+<blockquote>
+<p>The easiest path is probably using the <code>docker</code> image instructions we <a href="#docker-build-image">provide</a> however, if you want to setup the build environment manually use set of instructions <a href="#manual-build-tools-install">below</a>.</p>
+</blockquote>
+<h4 id="docker-build-image">Docker Build Image</h4>
+<p>To automatically setup a Linux build environment using <code>docker</code>, run the following to build the image locally:</p>
+<blockquote>
+<p>Note: we will eventually publish for use with <code>docker pull</code> instead.</p>
+</blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Select your target Ubuntu version:</span>
 UbuntuVersion<span style="color:#f92672">=</span>20.04
 <span style="color:#75715e"># Build the docker image:</span>
@@ -253,16 +279,16 @@ docker build --build-arg<span style="color:#f92672">=</span>UbuntuVersion<span s
 <p>Tip: you can also pass <code>--build-arg=http_proxy=http:/some-proxy-caching-host:3128</code> to help direct <code>apt</code> and <code>pip</code> to fetch the necessary packages via local caches.</p>
 </blockquote>
 <p>See <a href="./02-Build/#docker">02-Build/</a> for instructions on how to run this image.</p>
-<h3 id="linux-build-tools">Linux build tools</h3>
+<h4 id="manual-build-tools-install">Manual Build Tools Install</h4>
 <p>To manually setup your own Linux build environment:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Make sure some basic build tools are available:</span>
-sudo apt-get install git make build-essential
+sudo apt-get install build-essential
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Make sure some apt related tools are available:</span>
-sudo apt-get install <span style="color:#ae81ff">\</span>
-  apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+sudo apt-get install <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 
 <span style="color:#75715e"># Make sure an appropriate version of clang is available:</span>
-./script/install.llvm-clang.sh
+./scripts/install.llvm-clang.sh
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Make sure some dotnet dependencies are available:</span>
 sudo apt-get install liblttng-ctl0 liblttng-ust0 zlib1g libxml2
 </code></pre></div><blockquote>
@@ -278,6 +304,56 @@ sudo apt-get install liblttng-ctl0 liblttng-ust0 zlib1g libxml2
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-get install exuberant-ctags
 </code></pre></div><blockquote>
 <p>When available <code>make ctags</code> can be invoked to help generate a <code>tags</code> database at the root of the source tree to allow easier code navigation in editors that support it.</p>
+</blockquote>
+<h3 id="linux-python-install">Linux Python Install</h3>
+<h4 id="docker-python-install">Docker Python Install</h4>
+<p>If you used the <a href="#docker-build-image">Docker build image</a> instructions you&rsquo;re done!  All of the required packages should already be installed in the image.</p>
+<h4 id="using-conda">Using Conda</h4>
+<p>TODO</p>
+<h4 id="manual-python-install">Manual Python Install</h4>
+<ol>
+<li>
+<p>Install Python 3.7</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># We need to add a special apt repository for Python 3.7 support:</span>
+sudo apt-get -y install <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    software-properties-common apt-transport-https
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get -y install python3.7
+</code></pre></div></li>
+<li>
+<p>Install MLOS Python dependencies:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Also add some dependencies needed by some of the pip modules</span>
+sudo apt-get -y install python3-pip python3.7-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    build-essential libfreetype-dev unixodbc-dev
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python3.7 -m pip install --upgrade pip
+python3.7 -m pip install setuptools
+
+python3.7 -m pip install <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -r source/Mlos.Python/requirements.txt
+</code></pre></div></li>
+</ol>
+<h2 id="windows">Windows</h2>
+<blockquote>
+<p>Note: Most Windows shell commands here expect <code>powershell</code> (or <a href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows"><code>pwsh</code></a>).</p>
+</blockquote>
+<h3 id="windows-requirements">Windows Requirements</h3>
+<blockquote>
+<p>Portions of MLOS use Docker, which requires a Linux VM.  So support for <em>one</em> of the following is required:</p>
+</blockquote>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2">WSL2</a>, <em>or</em></li>
+<li><a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/">Hyper-V support</a></li>
+</ul>
+<blockquote>
+<p>Note: WSL2 is advised for ease of setup, integrations with Docker, and more flexible resource utilizations benefits.</p>
+</blockquote>
+<p>See the <a href="#install-docker">Install Docker</a> section for more details.</p>
+<h3 id="clone-the-repository-1">Clone the repository</h3>
+<p>Cross platform</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/microsoft/MLOS.git
+</code></pre></div><blockquote>
+<p>See <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing">https://git-scm.com/book/en/v2/Getting-Started-Installing</a> for help installing <code>git</code>, or use <code>choco install git</code> (see <a href="#using-chocolatey">below</a> for more details about chocolatey).</p>
 </blockquote>
 <h3 id="windows-build-tools">Windows build tools</h3>
 <p>There are several build tools install paths to choose from on Windows.</p>
@@ -296,14 +372,14 @@ sudo apt-get install liblttng-ctl0 liblttng-ust0 zlib1g libxml2
 <p>Allow local powershell scripts to be executed:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 </code></pre></div><blockquote>
-<p>This is necessary for our build environment initialization script <code>scripts/init.windows.ps1</code> as well.</p>
+<p>This is necessary for our build environment initialization script <code>scripts\init.windows.ps1</code> as well.</p>
 </blockquote>
 </li>
 </ol>
 <h4 id="using-a-local-script">Using a local script</h4>
 <ol>
 <li>
-<p>Launch the script we provide in the MLOS repo to install/update Visual Studio 2019 Community Edition with the necessary components:</p>
+<p>Launch the script we provide in the MLOS repo to install/update the free Visual Studio 2019 Community Edition with the necessary components:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">.\scripts\install-vs2019.ps1
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Waiting for installer process vs_community to end ...
 Waiting for installer process vs_community to end ...
@@ -314,7 +390,7 @@ Done
 </blockquote>
 </li>
 </ol>
-<h4 id="using-chocolatey">Using Chocolatey</h4>
+<h4 id="build-tools-using-chocolatey">Build Tools Using Chocolatey</h4>
 <p><a href="https://chocolatey.org">Chocolatey</a> is a package manager for Windows to help support scripted and reproducable installation of tools.</p>
 <ol start="0">
 <li>
@@ -346,34 +422,14 @@ choco install -y vscode-cpptools vscode-csharp vscode-cake
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">choco install -y visualstudio2019community
 </code></pre></div></li>
 </ol>
-<h4 id="manually">Manually</h4>
+<h4 id="windows-build-manually">Windows Build Manually</h4>
 <p>Download and install Visual Studio 2019 (free) Community Edition:</p>
 <p><a href="https://visualstudio.microsoft.com/vs/community/">https://visualstudio.microsoft.com/vs/community/</a></p>
-<p>Be sure to include support for .Net Core, C++, CMake</p>
-<h2 id="install-python-dependencies">Install Python Dependencies</h2>
-<h3 id="linux-python-install">Linux Python Install</h3>
-<ol>
-<li>
-<p>Install Python 3.7</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># We need to add a special apt repository for Python 3.7 support:</span>
-sudo apt-get -y install software-properties-common apt-transport-https
-sudo add-apt-repository -y ppa:deadsnakes/ppa
-sudo apt-get update
-sudo apt-get -y install python3.7
-</code></pre></div></li>
-<li>
-<p>Install MLOS Python dependencies:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Also add some dependencies needed by some of the pip modules</span>
-sudo apt-get -y install python3-pip python3.7-dev <span style="color:#ae81ff">\</span>
-    build-essential libfreetype-dev unixodbc-dev
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python3.7 -m pip install --upgrade pip
-python3.7 -m pip install setuptools
-
-python3.7 -m pip install -r source/Mlos.Python/requirements.txt
-</code></pre></div></li>
-</ol>
+<p>Be sure to include support for .Net Core and C++.</p>
 <h3 id="windows-python-install">Windows Python Install</h3>
-<h4 id="using-chocolatey-1">Using Chocolatey</h4>
+<h4 id="conda-based-install-for-windows">Conda Based Install for Windows</h4>
+<p>TODO</p>
+<h4 id="python-using-chocolatey">Python Using Chocolatey</h4>
 <ol start="0">
 <li>
 <p>See above for instructions on installing Chocolatey.</p>
@@ -387,31 +443,6 @@ python3.7 -m pip install -r source/Mlos.Python/requirements.txt
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip install -r source<span style="color:#ae81ff">\M</span>los.Python<span style="color:#ae81ff">\r</span>equirements.txt
 </code></pre></div></li>
 </ol>
-<h2 id="install-docker">Install Docker</h2>
-<h3 id="linux-docker-install">Linux Docker Install</h3>
-<p>Please see the official Docker install documenation for distribution specific documentation:</p>
-<ul>
-<li>
-<p>Ubuntu: <a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></p>
-<p>As a short guide (copied from the link above):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-get remove docker docker-engine docker.io containerd runc
-sudo apt-get update
-
-sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-sudo add-apt-repository <span style="color:#ae81ff">\</span>
-  <span style="color:#e6db74">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-</span><span style="color:#e6db74">  </span><span style="color:#66d9ef">$(</span>lsb_release -cs<span style="color:#66d9ef">)</span><span style="color:#e6db74"> \
-</span><span style="color:#e6db74">  stable&#34;</span>
-
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
-
-apt-get install docker-ce
-</code></pre></div></li>
-</ul>
 <h3 id="windows-docker-install">Windows Docker Install</h3>
 <p>As mentioned above, Docker on Windows first requires a Linux VM.</p>
 <blockquote>
@@ -432,7 +463,7 @@ Invoke-Item wsl_update_x64.msi
 </code></pre></div><blockquote>
 <p>Note: You may need to restart at this point.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wsl --set-default-version 2
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wsl --set-default-version <span style="color:#ae81ff">2</span>
 </code></pre></div></li>
 <li>
 <p><a href="https://docs.microsoft.com/en-us/windows/wsl/install-manual">Install a Linux distro for WSL2</a> (e.g. <a href="https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71?rtc=1&amp;activetab=pivot:overviewtab">Ubuntu 20.04</a>):</p>
@@ -530,24 +561,21 @@ Add-AppxPackage ./Ubuntu-20.04.appx
   <nav id="TableOfContents">
   <ul>
     <li><a href="#contents">Contents</a></li>
-    <li><a href="#requirements">Requirements</a></li>
-    <li><a href="#clone-the-repository">Clone the repository</a></li>
-    <li><a href="#install-build-tools">Install build tools</a>
+    <li><a href="#linux">Linux</a>
       <ul>
-        <li><a href="#docker">Docker</a></li>
-        <li><a href="#linux-build-tools">Linux build tools</a></li>
-        <li><a href="#windows-build-tools">Windows build tools</a></li>
-      </ul>
-    </li>
-    <li><a href="#install-python-dependencies">Install Python Dependencies</a>
-      <ul>
-        <li><a href="#linux-python-install">Linux Python Install</a></li>
-        <li><a href="#windows-python-install">Windows Python Install</a></li>
-      </ul>
-    </li>
-    <li><a href="#install-docker">Install Docker</a>
-      <ul>
+        <li><a href="#linux-requirements">Linux Requirements</a></li>
+        <li><a href="#clone-the-repository">Clone the repository</a></li>
         <li><a href="#linux-docker-install">Linux Docker Install</a></li>
+        <li><a href="#install-linux-build-tools">Install Linux Build Tools</a></li>
+        <li><a href="#linux-python-install">Linux Python Install</a></li>
+      </ul>
+    </li>
+    <li><a href="#windows">Windows</a>
+      <ul>
+        <li><a href="#windows-requirements">Windows Requirements</a></li>
+        <li><a href="#clone-the-repository-1">Clone the repository</a></li>
+        <li><a href="#windows-build-tools">Windows build tools</a></li>
+        <li><a href="#windows-python-install">Windows Python Install</a></li>
         <li><a href="#windows-docker-install">Windows Docker Install</a></li>
       </ul>
     </li>

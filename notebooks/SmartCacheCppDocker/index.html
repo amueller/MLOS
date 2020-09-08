@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Download SmartCacheCppDocker.ipynb notebook Objective The goal of this notebook is to guide you through the process of executing an optimization process in Mlos.
+Steps  Select build configuration. Generate the secrets file. Build the docker image. Launch the docker container. Launch Mlos.Agent. Launch SmartCache.exe benchmark.  Prerequisites  Build the Mlos project. The build configuration (Debug vs. Retail) must match your choice below. Have Docker installed and available. This notebook is run with {MLOS_ROOT}\source\Mlos.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Download SmartCacheCppDocker.ipynb notebook Objective The goal of this notebook is to guide you through the process of executing an optimization process in Mlos.
+Steps  Select build configuration. Generate the secrets file. Build the docker image. Launch the docker container. Launch Mlos.Agent. Launch SmartCache.exe benchmark.  Prerequisites  Build the Mlos project. The build configuration (Debug vs. Retail) must match your choice below. Have Docker installed and available. This notebook is run with {MLOS_ROOT}\source\Mlos." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://microsoft.github.io/MLOS/notebooks/SmartCacheCppDocker/" />
+
+<title>Smart Cache Cpp Docker | MLOS</title>
+<link rel="manifest" href="/MLOS/manifest.json">
+<link rel="icon" href="/MLOS/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/MLOS/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
+<script defer src="/MLOS/en.search.min.36d5b936034791ee6628efd13f6b6b585de5fa66ab01ed96eea126d157262596.js" integrity="sha256-NtW5NgNHke5mKO/RP2trWF3l&#43;marAe2W7qEm0VcmJZY="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/MLOS"><span>MLOS</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li>
+<p><a href="/MLOS/documentation/">Documentation</a></p>
+<ul>
+<li><a href="/MLOS/documentation/01-Prerequisites/">Prerequisites</a></li>
+<li><a href="/MLOS/documentation/02-Build/">Build</a></li>
+<li><a href="/MLOS/documentation/04-Test/">Test</a></li>
+<li><a href="/MLOS/documentation/CodingStandard/">Coding Standard</a></li>
+<li><a href="/MLOS/documentation/MlosArchitecture/">Architecture</a></li>
+<li><a href="/MLOS/documentation/RepoOrganization/">Repo Organization</a></li>
+</ul>
+</li>
+<li>
+<p>Notebooks</p>
+<ul>
+<li><a href="/MLOS/notebooks/BayesianOptimization/">Bayesian Optimization</a></li>
+<li><a href="/MLOS/notebooks/SmartCacheOptimization/">Smart Cache Optimization</a></li>
+</ul>
+</li>
+<li>
+<p>API Documentation</p>
+<ul>
+<li><a href="/MLOS/python_api/">Python</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/MLOS/CODE_OF_CONDUCT/">Code of Conduct</a></p>
+</li>
+<li>
+<p><a href="/MLOS/CONTRIBUTING/">Contributing</a></p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/MLOS/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Smart Cache Cpp Docker</strong>
+
+  <label for="toc-control">
+    
+    <img src="/MLOS/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents"></nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="download-smartcachecppdockeripynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebookssmartcachecppdockeripynb"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/SmartCacheCppDocker.ipynb">Download SmartCacheCppDocker.ipynb notebook</a></h1>
+<h1 id="objective">Objective</h1>
+<p>The goal of this notebook is to guide you through the process of executing an optimization process in Mlos.</p>
+<h1 id="steps">Steps</h1>
+<ol>
+<li>Select build configuration.</li>
+<li>Generate the secrets file.</li>
+<li>Build the docker image.</li>
+<li>Launch the docker container.</li>
+<li>Launch Mlos.Agent.</li>
+<li>Launch SmartCache.exe benchmark.</li>
+</ol>
+<h1 id="prerequisites">Prerequisites</h1>
+<ol>
+<li>Build the Mlos project. The build configuration (<del>Debug</del> vs. <strong>Retail</strong>) must match your choice below.</li>
+<li>Have Docker installed and available.</li>
+<li>This notebook is run with <code>{MLOS_ROOT}\source\Mlos.Notebooks</code> as a working directory (default if you open from ADS or VS Code).</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> json
+<span style="color:#f92672">import</span> os
+<span style="color:#f92672">import</span> subprocess
+<span style="color:#f92672">import</span> time
+
+<span style="color:#f92672">from</span> utils <span style="color:#f92672">import</span> generate_random_password, build_docker_image, run_docker_container, stop_docker_container, remove_docker_container
+mlos_root_directory <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(os<span style="color:#f92672">.</span>getcwd(), <span style="color:#e6db74">&#34;../..&#34;</span>))
+</code></pre></div><h1 id="select-build-configuration">Select build configuration</h1>
+<p><strong>ATTENTION</strong>: Optimization of DEBUG builds is pointless. Select DEBUG <strong>only</strong> if you are trying to debug these projects.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">build_configuration <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Release&#39;</span> <span style="color:#75715e"># you can change it to &#39;Debug&#39; here.</span>
+
+<span style="color:#66d9ef">assert</span> build_configuration <span style="color:#f92672">in</span> (<span style="color:#e6db74">&#39;Release&#39;</span>, <span style="color:#e6db74">&#39;Debug&#39;</span>)
+
+<span style="color:#66d9ef">if</span> build_configuration <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Release&#39;</span>:
+    obj_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;obj&#34;</span>
+<span style="color:#66d9ef">else</span>:
+    obj_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;objd&#34;</span>
+
+mlos_agent_server_exe_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(mlos_root_directory, <span style="color:#e6db74">&#34;out/dotnet/source/Mlos.Agent.Server&#34;</span>, obj_dir, <span style="color:#e6db74">&#34;AnyCPU&#34;</span>, <span style="color:#e6db74">&#34;Mlos.Agent.Server.exe&#34;</span>))
+smart_cache_exe_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(mlos_root_directory, <span style="color:#e6db74">&#34;out/dotnet/source/Examples/SmartCache&#34;</span>, obj_dir, <span style="color:#e6db74">&#34;x64&#34;</span>, <span style="color:#e6db74">&#34;SmartCache.exe&#34;</span>))
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> (os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(mlos_agent_server_exe_path) <span style="color:#f92672">and</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(smart_cache_exe_path)):
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Are you sure you have done a build in a {build_configuration} configuration?&#34;</span>)
+</code></pre></div><h1 id="generate-the-secrets-file">Generate the secrets file</h1>
+<blockquote>
+<p>Note: We are moving away from using SqlRPC and towards gRPC for communication between Mlos.Agent and the Optimizer Service. However, until that migration is complete, Mlos.Agent has to know how to connect to Sql Server.</p>
+</blockquote>
+<p>The secrets file is a simple json file generated by the code cell below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">overwrite_secrets <span style="color:#f92672">=</span> False
+
+secrets_file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(mlos_root_directory, <span style="color:#e6db74">&#34;source/Mlos.Python/Secrets/local_docker_connection_string.json&#34;</span>))
+
+<span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(secrets_file_path) <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> overwrite_secrets:
+    <span style="color:#75715e"># Secrets already exist. We need to grab the password for later use.</span>
+    <span style="color:#75715e">#</span>
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Secrets file {secrets_file_path} already exists.&#34;</span>)
+    
+    <span style="color:#66d9ef">with</span> open(secrets_file_path, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> in_file:
+        secrets <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load(in_file)
+    sa_password <span style="color:#f92672">=</span> secrets[<span style="color:#e6db74">&#39;Password&#39;</span>]
+    
+<span style="color:#66d9ef">else</span>:
+    <span style="color:#75715e"># We need to create the secrets file from the template.</span>
+    sa_password <span style="color:#f92672">=</span> generate_random_password()
+    sample_secrets_file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(mlos_root_directory, <span style="color:#e6db74">&#34;source/Mlos.Python/Secrets/sample_docker_connection_string.json&#34;</span>))
+    <span style="color:#66d9ef">with</span> open(sample_secrets_file_path, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> in_file:
+        secrets_dict <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load(in_file)
+    
+    secrets_dict[<span style="color:#e6db74">&#39;Password&#39;</span>] <span style="color:#f92672">=</span> sa_password
+    <span style="color:#66d9ef">with</span> open(secrets_file_path, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> out_file:
+        json<span style="color:#f92672">.</span>dump(secrets_dict, out_file, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+    
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Wrote a new secrets file to {secrets_file_path}.&#34;</span>)
+</code></pre></div><pre><code>Secrets file c:\Users\bpkroth\src\MLOS\MLOS.msdata.2\source\Mlos.Python\Secrets\local_docker_connection_string.json already exists.
+</code></pre>
+<h1 id="build-docker-image">Build Docker image</h1>
+<p>The optimizer lives inside the Docker. Let&rsquo;s build the image.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">build_docker_image(sa_password)
+</code></pre></div><pre><code>Step 1/15 : FROM microsoft/mssql-server-linux:latest
+ ---&gt; 314918ddaedf
+Step 2/15 : RUN apt-get -y update &amp;&amp;     apt-get install -y software-properties-common &amp;&amp;     add-apt-repository -y ppa:deadsnakes/ppa &amp;&amp;     apt-get -y update &amp;&amp;     apt-get install -y python3.7 python3-pip &amp;&amp;     apt-get install -y build-essential libssl-dev libffi-dev python3-dev python3.7-dev unixodbc-dev &amp;&amp;     rm -rf /var/lib/apt/lists/*
+ ---&gt; Using cache
+ ---&gt; c96a7f675e7e
+Step 3/15 : RUN python3.7 -m pip install pip
+ ---&gt; Using cache
+ ---&gt; feb04a146619
+Step 4/15 : RUN python3.7 -m pip install --upgrade pip
+ ---&gt; Using cache
+ ---&gt; 199aa4fecd21
+Step 5/15 : RUN mkdir -p /usr/src/Mlos.Python
+ ---&gt; Using cache
+ ---&gt; 75325321633c
+Step 6/15 : WORKDIR /usr/src/
+ ---&gt; Using cache
+ ---&gt; c28de51505c5
+Step 7/15 : COPY ./requirements.txt ./Mlos.Python/requirements.txt
+ ---&gt; Using cache
+ ---&gt; 9e4576c57340
+Step 8/15 : RUN python3.7 -m pip install -r /usr/src/Mlos.Python/requirements.txt
+ ---&gt; Using cache
+ ---&gt; dd3f294d79e3
+Step 9/15 : COPY . ./Mlos.Python
+ ---&gt; Using cache
+ ---&gt; 33fb9dad43b5
+Step 10/15 : ENV ACCEPT_EULA=Y
+ ---&gt; Using cache
+ ---&gt; 4f19a90fbef2
+Step 11/15 : ARG SA_PASSWORD=DEFAULT_SA_PASSWORD
+ ---&gt; Using cache
+ ---&gt; 154868f57d1a
+Step 12/15 : RUN (/opt/mssql/bin/sqlservr --accept-eula &amp; ) | grep -q &quot;Service Broker manager has started&quot; &amp;&amp;     /opt/mssql-tools/bin/sqlcmd -S127.0.0.1 -Usa -P${SA_PASSWORD} -i ./Mlos.Python/MlosOptimizationServices/ModelsDatabase/SQLScripts/Schema.sql
+ ---&gt; Using cache
+ ---&gt; 48d1a8c19169
+Step 13/15 : EXPOSE 1433
+ ---&gt; Using cache
+ ---&gt; 63fd96771c97
+Step 14/15 : ENV SA_PASSWORD=$SA_PASSWORD
+ ---&gt; Using cache
+ ---&gt; 94ec12721485
+Step 15/15 : CMD /opt/mssql/bin/sqlservr &amp;     cd Mlos.Python; python3.7 start_mlos_optimization_runtime.py launch --database-connection-string-file ./Secrets/local_docker_connection_string.json
+ ---&gt; Using cache
+ ---&gt; 47630835a8d0
+Successfully built 47630835a8d0
+Successfully tagged mssql-server-linux-with-mlos-python:latest
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+</code></pre>
+<h1 id="run-docker-container">Run Docker container</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">run_docker_container()
+</code></pre></div><pre><code>docker run --detach -p1433:1433 --name MlosOptimizerService mssql-server-linux-with-mlos-python
+bb2ea175d37a4428e885e17bae73e90c784514b779aad27fc0a4b850ea1a3f47
+</code></pre>
+<h1 id="launch-mlosagentserver">Launch Mlos.Agent.Server</h1>
+<p>We need to launch Mlos.Agent.Server and let it communicate with the Optimizer.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(mlos_agent_server_exe_path, f<span style="color:#e6db74">&#39;&#34;{secrets_file_path}&#34;&#39;</span>)
+mlos_agent_server_process <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen([mlos_agent_server_exe_path, secrets_file_path], creationflags<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>CREATE_NEW_CONSOLE)
+time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">15</span>) <span style="color:#75715e"># TODO: wait for Mlos.Agent.Server to signal readiness instead of blindly waiting.</span>
+</code></pre></div><pre><code>c:\Users\bpkroth\src\MLOS\MLOS.msdata.2\out\dotnet\source\Mlos.Agent.Server\obj\AnyCPU\Mlos.Agent.Server.exe &quot;c:\Users\bpkroth\src\MLOS\MLOS.msdata.2\source\Mlos.Python\Secrets\local_docker_connection_string.json&quot;
+</code></pre>
+<h1 id="launch-smartcache-microbenchmark">Launch SmartCache microbenchmark</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(smart_cache_exe_path)
+smart_cache_process <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen([smart_cache_exe_path], creationflags<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>CREATE_NEW_CONSOLE)
+
+<span style="color:#75715e"># wait for the process to exit</span>
+<span style="color:#75715e">#</span>
+<span style="color:#66d9ef">while</span> smart_cache_process<span style="color:#f92672">.</span>poll() <span style="color:#f92672">is</span> None:
+    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;SmartCache.exe exited.&#34;</span>)
+</code></pre></div><pre><code>c:\Users\bpkroth\src\MLOS\MLOS.msdata.2\out\dotnet\source\Examples\SmartCache\obj\x64\SmartCache.exe
+SmartCache.exe exited.
+</code></pre>
+<h1 id="clean-up-docker">Clean up Docker</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">stop_docker_container()
+remove_docker_container()
+</code></pre></div><pre><code>docker stop MlosOptimizerService
+MlosOptimizerService
+docker container rm MlosOptimizerService
+MlosOptimizerService
+</code></pre>
+<h1 id="download-smartcachecppdockeripynb-notebookhttpsrawgithubusercontentcommicrosoftmlosmainsourcemlosnotebookssmartcachecppdockeripynb-1"><a href="https://raw.githubusercontent.com/microsoft/MLOS/main/source/Mlos.Notebooks/SmartCacheCppDocker.ipynb">Download SmartCacheCppDocker.ipynb notebook</a></h1>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

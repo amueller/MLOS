@@ -26,8 +26,8 @@ Resources:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://microsoft.github.io/MLOS/CONTRIBUTING/</guid>
-      <description>Contributing This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot.</description>
+      <description>Contributing to MLOS This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment).</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ When you submit a pull request, a CLA bot will automatically determine whether y
       
       <guid>https://microsoft.github.io/MLOS/documentation/01-Prerequisites/</guid>
       <description>Prerequisites for building and using MLOS These are one-time setup instructions that should be executed prior to following the build instructions in 02-Build/
-Contents  Prerequisites for building and using MLOS  Contents Requirements Clone the repository Install build tools  Docker Linux build tools Windows build tools  Using a local script Using Chocolatey Manually     Install Python Dependencies  Linux Windows   Install Docker  Linux Docker Install Windows Docker Install       Note: Most Windows shell commands here expect powershell (or pwsh).</description>
+Contents  Prerequisites for building and using MLOS  Contents Linux  Linux Requirements Clone the repository Linux Docker Install Install Linux Build Tools  Docker Build Image Manual Build Tools Install   Linux Python Install  Docker Python Install Using Conda Manual Python Install     Windows  Windows Requirements Clone the repository Windows build tools  Using a local script Build Tools Using Chocolatey Windows Build Manually   Windows Python Install  Conda Based Install for Windows Python Using Chocolatey   Windows Docker Install      MLOS currently supports 64-bit Intel/AMD platforms, though ARM64 support is under development.</description>
     </item>
     
     <item>
@@ -47,8 +47,8 @@ Contents  Prerequisites for building and using MLOS  Contents Requirements Clone
       
       <guid>https://microsoft.github.io/MLOS/documentation/02-Build/</guid>
       <description>Build Instructions for MLOS Prerequisites See 01-Prerequisites/ for initial build tools setup instructions.
-Contents  Build Instructions for MLOS  Prerequisites Contents Docker Linux  CLI VSCode   Windows  CLI Visual Studio      Docker Assuming you&amp;rsquo;ve built a container image using the instructions in 01-Prerequisites/ you can start an interactive session using the container image as follows:
-# Using the UbuntuVersion local shell variable set earlier to &amp;#34;docker build&amp;#34; the image:UbuntuVersion=20.</description>
+There are different instructions according to the environment setup you chose.
+Contents  Build Instructions for MLOS  Prerequisites Contents Docker Linux  CLI VSCode   Windows  CLI Visual Studio      Docker If you chose to use the Docker build environment and have already built or pulled a container image using the instructions in 01-Prerequisites/ you can start an interactive session using the container image as follows:</description>
     </item>
     
     <item>
@@ -62,19 +62,10 @@ Contents  Build Instructions for MLOS  Prerequisites Contents Docker Linux  CLI 
     
     <item>
       <title></title>
-      <link>https://microsoft.github.io/MLOS/documentation/04-Contributing/</link>
+      <link>https://microsoft.github.io/MLOS/documentation/04-Test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://microsoft.github.io/MLOS/documentation/04-Contributing/</guid>
-      <description>Contributing to MLOS TODO: Write up some instructions for contributing to MLOS codebase itself.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://microsoft.github.io/MLOS/documentation/05-Test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://microsoft.github.io/MLOS/documentation/05-Test/</guid>
+      <guid>https://microsoft.github.io/MLOS/documentation/04-Test/</guid>
       <description>Test Instructions for MLOS TODO: document how to run unit tests for
  C++ C#  Python First, ensure that the necessary Python modules are installed. See 01-Prerequisites/ for details.
 Linux scripts/run-python-tests.sh Windows scripts\run-python-tests.cmd </description>
@@ -82,10 +73,10 @@ Linux scripts/run-python-tests.sh Windows scripts\run-python-tests.cmd </descrip
     
     <item>
       <title></title>
-      <link>https://microsoft.github.io/MLOS/documentation/06-Debug/</link>
+      <link>https://microsoft.github.io/MLOS/documentation/05-Debug/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://microsoft.github.io/MLOS/documentation/06-Debug/</guid>
+      <guid>https://microsoft.github.io/MLOS/documentation/05-Debug/</guid>
       <description>TODO</description>
     </item>
     
@@ -144,25 +135,12 @@ Motivation In software performance engineering, the impact different (input) par
     
     <item>
       <title></title>
-      <link>https://microsoft.github.io/MLOS/notebooks/OptimizerMonitor/</link>
+      <link>https://microsoft.github.io/MLOS/notebooks/SmartCacheCppDocker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://microsoft.github.io/MLOS/notebooks/OptimizerMonitor/</guid>
-      <description>Download OptimizerMonitor.ipynb notebook Goal The goal of this notebook is to provide a UI to a data scientist or dev 2.0 to interact with the optimizers residing in the optimizer microservice.
-TODO   Integrate Model Tomograph:
- Change Predict() to return a pandas df: change change/eliminate the prediction class.   Fix the individual models input spaces so that they reject invalid points. Add color scale Add cross-hairs    Display current optimum:</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://microsoft.github.io/MLOS/notebooks/SmartCache/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://microsoft.github.io/MLOS/notebooks/SmartCache/</guid>
-      <description>Download SmartCache.ipynb notebook Goal The goal of this notebook is to optimize SmartCache.
-from IPython.core.display import display, HTML display(HTML(&amp;#34;&amp;lt;style&amp;gt;.container { width:100% !important; }&amp;lt;/style&amp;gt;&amp;#34;)) TODO Lots to do here.
-For once - this is probably not the workflow we want. We likely want to:
- Start the Optimizer in a separate process so that we can monitor its progress. Maybe we should have a separate notebook just for Optimizer Monitoring. Start the Mlos.</description>
+      <guid>https://microsoft.github.io/MLOS/notebooks/SmartCacheCppDocker/</guid>
+      <description>Download SmartCacheCppDocker.ipynb notebook Objective The goal of this notebook is to guide you through the process of executing an optimization process in Mlos.
+Steps  Select build configuration. Generate the secrets file. Build the docker image. Launch the docker container. Launch Mlos.Agent. Launch SmartCache.exe benchmark.  Prerequisites  Build the Mlos project. The build configuration (Debug vs. Retail) must match your choice below. Have Docker installed and available. This notebook is run with {MLOS_ROOT}\source\Mlos.</description>
     </item>
     
     <item>
@@ -174,16 +152,6 @@ For once - this is probably not the workflow we want. We likely want to:
       <description>Download SmartCacheOptimization.ipynb notebook Optimizing Smart Cache with Bayesian Optimization The goal of this notebook is to optimize SmartCache using Bayesian Optimization approach.
 We&amp;rsquo;re using a sequential model-based optimization approach, that consists of the following loop:
  Get suggested config from optimizer, Apply suggested config to SmartCache, Execute a fixed workload, Collect the metrics from SmartCache, Register an observation with the optimizer.  # import the required classes and tools import grpc import pandas as pd from mlos.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://microsoft.github.io/MLOS/notebooks/StartHere/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://microsoft.github.io/MLOS/notebooks/StartHere/</guid>
-      <description>Download StartHere.ipynb notebook Objective The goal of this notebook is to guide you through the process of executing an optimization process in Mlos.
-Steps  Select build configuration. Generate the secrets file. Build the docker image. Launch the docker container. Launch Mlos.Agent. Launch SmartCache.exe benchmark.  Prerequisites  Build the Mlos project. The build configuration (Debug vs. Retail) must match your choice below. Have Docker installed and available. This notebook is run with {MLOS_ROOT}\source\Mlos.</description>
     </item>
     
     <item>
