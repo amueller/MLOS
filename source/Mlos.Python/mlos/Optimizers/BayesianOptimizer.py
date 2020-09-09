@@ -15,20 +15,25 @@ from mlos.Optimizers.ExperimentDesigner.ExperimentDesigner import ExperimentDesi
 from mlos.Optimizers.RegressionModels.GoodnessOfFitMetrics import DataSetType
 from mlos.Optimizers.RegressionModels.HomogeneousRandomForestRegressionModel import HomogeneousRandomForestRegressionModel,\
     HomogeneousRandomForestRegressionModelConfig
-
+from mlos.Optimizers.RegressionModels.RegressionEnhancedRandomForestModel import (
+    RegressionEnhancedRandomForestRegressionModel, RegressionEnhancedRandomForestRegressionModelConfig)
 
 class BayesianOptimizerConfig(metaclass=DefaultConfigMeta):
 
     CONFIG_SPACE = SimpleHypergrid(
         name="bayesian_optimizer_config",
         dimensions=[
-            CategoricalDimension(name="surrogate_model_implementation", values=[HomogeneousRandomForestRegressionModel.__name__]),
+            CategoricalDimension(name="surrogate_model_implementation", values=[HomogeneousRandomForestRegressionModel.__name__,
+                                                                                RegressionEnhancedRandomForestRegressionModel.__name__]),
             CategoricalDimension(name="experiment_designer_implementation", values=[ExperimentDesigner.__name__]),
             DiscreteDimension(name="min_samples_required_for_guided_design_of_experiments", min=2, max=10000)
         ]
     ).join(
         subgrid=HomogeneousRandomForestRegressionModelConfig.CONFIG_SPACE,
         on_external_dimension=CategoricalDimension(name="surrogate_model_implementation", values=[HomogeneousRandomForestRegressionModel.__name__])
+    ).join(
+        subgrid=RegressionEnhancedRandomForestRegressionModelConfig.CONFIG_SPACE,
+        on_external_dimension=CategoricalDimension(name="surrogate_model_implementation", values=[RegressionEnhancedRandomForestRegressionModel.__name__])
     ).join(
         subgrid=ExperimentDesignerConfig.CONFIG_SPACE,
         on_external_dimension=CategoricalDimension(name="experiment_designer_implementation", values=[ExperimentDesigner.__name__])
@@ -76,14 +81,22 @@ class BayesianOptimizer(OptimizerInterface):
 
         # Now let's put together the surrogate model.
         #
-        assert self.optimizer_config.surrogate_model_implementation == HomogeneousRandomForestRegressionModel.__name__, "TODO: implement more"
-        self.surrogate_model = HomogeneousRandomForestRegressionModel(
-            model_config=self.optimizer_config.homogeneous_random_forest_regression_model_config,
-            input_space=self.optimization_problem.parameter_space, # TODO: change to feature space
-            output_space=self.optimization_problem.objective_space,
-            logger=self.logger
-        )
-
+        if self.optimizer_config.surrogate_model_implementation == HomogeneousRandomForestRegressionModel.__name__:
+            self.surrogate_model = HomogeneousRandomForestRegressionModel(
+                model_config=self.optimizer_config.homogeneous_random_forest_regression_model_config,
+                input_space=self.optimization_problem.parameter_space, # TODO: change to feature space
+                output_space=self.optimization_problem.objective_space,
+                logger=self.logger
+            )
+        elif self.optimizer_config.surrogate_model_implementation == RegressionEnhancedRandomForestRegressionModel.__name__:
+            self.surrogate_model = RegressionEnhancedRandomForestRegressionModel(
+                model_config=self.optimizer_config.regression_enhanced_random_forest_regression_model_config,
+                input_space=self.optimization_problem.parameter_space, # TODO: change to feature space
+                output_space=self.optimization_problem.objective_space,
+                logger=self.logger)
+        else:
+            raise ValueError(f"Unsupported surrogate model: {self.optimizer_config.surrogate_model_implementation}, use "
+                             f"{HomogeneousRandomForestRegressionModel.__name__} or . {RegressionEnhancedRandomForestRegressionModel.__name__}")
         # Now let's put together the experiment designer that will suggest parameters for each experiment.
         #
         assert self.optimizer_config.experiment_designer_implementation == ExperimentDesigner.__name__
